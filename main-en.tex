@@ -1,0 +1,26 @@
+%====================================================================================%
+%  Academic Visiting-Scholar CV --- ENGLISH edition (main entry)
+%------------------------------------------------------------------------------------%
+%  COMPILE (XeLaTeX, run TWICE for correct header/footer placement):
+%      xelatex main-en.tex
+%      xelatex main-en.tex
+%    or with latexmk:
+%      latexmk -xelatex main-en.tex
+%
+%  WHAT TO EDIT:
+%    * your personal information -> cv-content-en.tex
+%    * colors / fonts / layout  -> academic-cv.sty
+%    * photo                    -> resources/photo.jpg
+%====================================================================================%
+
+\documentclass[10pt,A4,english]{article}
+
+% the template style: fonts, colors, layout and CV commands
+\usepackage{academic-cv}
+
+\begin{document}
+
+% English content (example: fictitious scholar Da-Shan Zhang)
+\input{cv-content-en}
+
+\end{document}

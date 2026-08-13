@@ -1,0 +1,228 @@
+%============================================================================%
+%  cv-content-en.tex --- ENGLISH content layer (example: fictitious scholar Da-Shan Zhang)
+%----------------------------------------------------------------------------%
+%  Replace everything below with your own information. All sample data is
+%  fictitious (names, affiliations, emails and publications are invented).
+%  Structure:
+%    LEFT column  : photo, name, personal info, research, education,
+%                   research interests, contact, visiting plan
+%    RIGHT column : biography, experience, contributions, publications,
+%                   projects, teaching, honours, collaboration
+%============================================================================%
+
+% name shown in the top band on every page
+\renewcommand{\cvheadername}{Da-Shan Zhang}
+
+\columnratio{0.31}
+\setlength{\columnsep}{2.2em}
+\setlength{\columnseprule}{4pt}
+\colseprulecolor{white}
+
+\begin{paracol}{2}
+
+%----------------------------------------------------------------------------%
+%  LEFT COLUMN
+%----------------------------------------------------------------------------%
+\begin{leftcolumn}
+
+%--- photo: put your picture at resources/photo.jpg --------------------------%
+\includegraphics[width=\linewidth]{resources/photo.jpg}
+
+%--- name and title -----------------------------------------------------------%
+\fcolorbox{white}{white}{\begin{minipage}[c][2.0cm][c]{1\mpwidth}
+	\LARGE{\textbf{\textcolor{maincol}{Da-Shan Zhang}}} \\[2pt]
+	\normalsize{ \textcolor{maincol} {Ph.D. | Associate Professor} } \\[1pt]
+	\normalsize{ \textcolor{maincol} {Master's Supervisor} }
+\end{minipage}} \\
+\icontext{CaretRight}{12}{Chinese (native), English (fluent)}\\[4pt]
+\icontext{CaretRight}{12}{Shanghai, China}\\[4pt]
+\icontext{CaretRight}{12}{Nationality: Chinese}\\[4pt]
+
+%--- research skills with progress bars (percent from 0 to 1) -----------------%
+\cvsection{Research}
+
+\cvskill{Evolutionary computation} {10+ yrs} {0.95}
+\cvskill{Swarm intelligence} {8+ yrs} {0.85}
+\cvskill{Multi-objective optimization} {8+ yrs} {0.85}
+\cvskill{Neural architecture search} {6+ yrs} {0.7}
+\cvskill{Deep learning} {6+ yrs} {0.7}
+\cvskill{Parallel computing} {6+ yrs} {0.65}
+\cvskill{Scientific writing (English)} {Professional} {0.75}
+
+\newpage
+
+%--- education ------------------------------------------------------------------%
+\cvsection{Education}
+
+\cvmetaevent
+{09/2015 - 06/2019}
+{Ph.D. in Computer Science}
+{Lakeside University}
+{Research on evolutionary computation and its applications in engineering design.}
+\cvmetaevent
+{09/2012 - 06/2015}
+{M.Sc. in Computer Science}
+{Lakeside University}
+{Thesis on multi-objective particle swarm optimization.}
+\cvmetaevent
+{09/2008 - 06/2012}
+{B.Eng. in Software Engineering}
+{Riverside College}
+{First-class honors graduate.}
+
+%--- research interests ------------------------------------------------------------%
+\cvsection{Research Interests}
+
+\icontext{CaretRight}{12}{Evolutionary computation}\\[4pt]
+\icontext{CaretRight}{12}{Multi-objective optimization}\\[4pt]
+\icontext{CaretRight}{12}{Neural architecture search}\\[4pt]
+\icontext{CaretRight}{12}{Federated learning}\\[4pt]
+\icontext{CaretRight}{12}{Large-scale optimization}\\[4pt]
+\icontext{CaretRight}{12}{Intelligent manufacturing}\\[4pt]
+
+%--- contact ------------------------------------------------------------------------%
+\cvsection{Contact}
+
+\icontext{MapMarker}{16}{School of Computer Science\newline Lakeside University, Shanghai, China}\\[4pt]
+\icontext{MobilePhone}{16}{+86 138 0000 0000}\\[4pt]
+\iconemail{Envelope}{16}{zhang.academic@example.com}{zhang.academic@example.com}\\[4pt]
+\iconhref{Github}{16}{github.com/zhang-research-example}{https://github.com/zhang-research-example}\\[4pt]
+
+%--- visiting plan (edit dates / availability as needed) ---------------------------%
+\cvsection{Visiting Plan}
+
+\icontext{CaretRight}{12}{CSC-sponsored visiting appointment}\\[4pt]
+\icontext{CaretRight}{12}{Duration: 12 months}\\[4pt]
+\icontext{CaretRight}{12}{Availability: from 2027}\\[4pt]
+\icontext{CaretRight}{12}{Funding: fully covered by CSC}\\[4pt]
+
+\end{leftcolumn}
+
+%----------------------------------------------------------------------------%
+%  RIGHT COLUMN
+%----------------------------------------------------------------------------%
+\begin{rightcolumn}
+
+%--- biography ---------------------------------------------------------------------%
+\cvsection{Biography}
+\vspace{4pt}
+
+\cvtext{Da-Shan Zhang is an \textbf{Associate Professor} and \textbf{Master's Supervisor} at the School of Computer Science, Lakeside University, China. He received his Ph.D. in Computer Science from Lakeside University in 2019. His research focuses on \textbf{evolutionary computation, multi-objective optimization and neural architecture search}, with applications in intelligent manufacturing, energy systems and engineering design.}
+
+\vspace{10pt}
+
+\cvtext{He has published \textbf{over 30 papers} in leading international journals and conferences, including two ESI Highly Cited Papers, and holds \textbf{three granted invention patents}. He has served as Principal Investigator on two national-level research projects and as a \textbf{reviewer for 15+ international journals}. In 2026, he was awarded a \textbf{China Scholarship Council (CSC) Visiting Scholar fellowship} to pursue a 12-month international research collaboration.}
+
+%--- work experience -------------------------------------------------------------------%
+\vspace{4pt}
+\cvsection{Work Experience}
+\vspace{4pt}
+
+\cvevent
+{01/2024 - present}
+	{Associate Professor}
+	{School of Computer Science\newline Lakeside University, China}
+	{Leading research on evolutionary optimization and deep learning; supervising master's students; teaching intelligent optimization and machine learning.}
+
+\cvevent
+{07/2019 - 12/2023}
+	{Lecturer}
+	{School of Computer Science\newline Lakeside University, China}
+	{Conducted research on multi-objective optimization and its engineering applications; taught undergraduate courses on programming and data structures.}
+
+%--- signature research contributions ----------------------------------------------------%
+\cvsection{Signature Research Contributions}
+\vspace{4pt}
+
+\cvlist{
+	\item \textbf{Adaptive Multi-Objective Evolutionary Framework.} First and corresponding author. Proposed a decomposition-based framework with adaptive weight adjustment; ESI Highly Cited Paper with 150+ citations.
+	\item \textbf{Bi-Level Neural Architecture Search.} Corresponding author. Developed a surrogate-assisted search algorithm that reduces search cost by 60\%.
+	\item \textbf{Parallel Large-Scale Optimizer.} First author. Designed a GPU-accelerated optimizer achieving up to 12$\times$ speed-up on 1000-dimensional problems.
+	\item \textbf{Open-Source Benchmarking Suite.} Maintains an open-source toolkit for standardized evaluation and visualization of evolutionary algorithms.
+}
+
+%--- selected publications (bold = author, * = corresponding author) --------------------%
+% removed forced page break (auto-flow)
+\cvsection{Selected Publications}
+\vspace{4pt}
+
+\begin{itemize}[leftmargin=*]
+	\itemsep 1.5pt
+	\item \textbf{D. Zhang}\textsuperscript{*}, J. Wang, and X. Liu, ``Adaptive Decomposition for Multi-Objective Evolutionary Optimization,'' \textit{Journal of Computational Optimization}, vol. 18, no. 3, pp. 201--225, 2025. \textbf{(ESI Highly Cited)}
+	\item \textbf{D. Zhang}\textsuperscript{*}, X. Liu, and Y. Sun, ``Surrogate-Assisted Bi-Level Neural Architecture Search,'' \textit{IEEE Transactions on Evolutionary Intelligence}, vol. 12, no. 2, pp. 88--104, 2024.
+	\item J. Wang, \textbf{D. Zhang}, and M. Chen, ``GPU-Accelerated Differential Evolution for Large-Scale Optimization,'' \textit{Parallel and Distributed Computing Letters}, vol. 30, no. 1, pp. 45--62, 2024.
+	\item \textbf{D. Zhang}, Y. Sun, and J. Wang, ``A Cooperative Coevolution Framework with Transfer Learning for Dynamic Optimization,'' \textit{Applied Intelligent Computing}, vol. 22, p. 104331, 2023.
+	\item Y. Sun, \textbf{D. Zhang}\textsuperscript{*}, and M. Chen, ``Energy-Aware Scheduling via Multi-Objective Evolutionary Algorithms,'' \textit{International Journal of Smart Manufacturing}, vol. 9, no. 4, pp. 310--329, 2022.
+\end{itemize}
+
+\vspace{2pt}
+{\small \textcolor{maincol}{* Corresponding author.}}
+
+\vspace{2pt}
+
+%--- patents and research translation ------------------------------------------------------%
+\cvsection{Patents and Research Translation}
+\vspace{4pt}
+
+\cvlist{
+	\item \textbf{Three granted Chinese invention patents}, first inventor on two.
+	\item Core inventions cover adaptive multi-objective optimization, a parallel evolutionary engine, and an intelligent scheduling method.
+	\item Research outputs have been applied in production scheduling, energy management, and design optimization for manufacturing enterprises.
+}
+
+%--- research projects -----------------------------------------------------------------------%
+\cvsection{Research Projects}
+\vspace{4pt}
+
+\cvevent
+{2022 - 2025}
+	{National Natural Science Foundation of China (NSFC)}
+	{General Program, No. 6207XXXXX | Principal Investigator}
+	{Evolutionary optimization for large-scale multi-objective problems in smart manufacturing; completed.}
+
+\cvevent
+{2019 - 2022}
+	{Provincial Science and Technology Program}
+	{Key R\&D Project | Principal Investigator}
+	{Intelligent scheduling and optimization for energy systems; completed.}
+
+\cvevent
+{2020 - 2022}
+	{University Young Faculty Research Project}
+	{Lakeside University | Principal Investigator}
+	{Surrogate-assisted evolutionary algorithms for expensive optimization problems; completed.}
+
+%--- teaching and mentoring ---------------------------------------------------------------------%
+\cvsection{Teaching and Mentoring}
+\vspace{4pt}
+
+\cvlist{
+	\item Teaches four courses across undergraduate and graduate programs; recipient of the University Outstanding Teaching Award (2023).
+	\item Supervised 15+ master's students; three mentees received the National Graduate Scholarship.
+	\item Guided national-level undergraduate innovation projects; mentored student teams to 30+ awards in academic competitions.
+}
+
+%--- honours and academic service -----------------------------------------------------------------%
+\cvsection{Honours and Academic Service}
+\vspace{4pt}
+
+\cvlist{
+	\item \textbf{CSC Visiting Scholar Fellowship}, China Scholarship Council, 2026.
+	\item Member of IEEE and the China Computer Federation (CCF); reviewer for 15+ international journals; PC Member of two international conferences.
+	\item Outstanding Paper Award, International Conference on Computational Intelligence, 2023.
+}
+
+%--- prospective collaboration --------------------------------------------------------------------%
+\cvsection{Prospective International Collaboration}
+\vspace{4pt}
+
+\cvtext{As a CSC-funded visiting scholar, Da-Shan Zhang is seeking a host research group working on \textbf{evolutionary computation, multi-objective optimization and neural architecture search}, or their applications in \textbf{intelligent manufacturing, energy systems and engineering design}. He would be glad to contribute through joint theory and algorithm research, reproducible open-source benchmarking, and co-supervision of graduate researchers.}
+
+%--- signature --------------------------------------------------------------------------------------%
+\vspace{8pt}
+Shanghai, China, \today     \hspace{1cm}   \hrulefill
+
+\hspace*{30mm}\phantom{Shanghai, China, \today }Da-Shan Zhang
+
+\end{rightcolumn}
+\end{paracol}

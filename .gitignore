@@ -1,0 +1,18 @@
+# --- LaTeX auxiliary files ---
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.xdv
+*.toc
+*.lof
+*.lot
+
+# --- macOS ---
+.DS_Store
+
+# --- Editors ---
+.idea/
+.vscode/
+*.swp

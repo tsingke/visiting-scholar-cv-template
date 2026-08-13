@@ -1,0 +1,26 @@
+%====================================================================================%
+%  学术访问学者简历 --- 中文版（主入口）
+%------------------------------------------------------------------------------------%
+%  编译（XeLaTeX，需运行两次以确保页眉/页脚定位正确）：
+%      xelatex main-zh.tex
+%      xelatex main-zh.tex
+%    或使用 latexmk：
+%      latexmk -xelatex main-zh.tex
+%
+%  需要修改的内容：
+%    * 个人信息  -> cv-content-zh.tex
+%    * 配色/字体/版式 -> academic-cv.sty
+%    * 照片      -> resources/photo.jpg
+%====================================================================================%
+
+\documentclass[10pt,A4]{article}
+
+% 模板样式：字体、配色、版式与 CV 命令
+\usepackage{academic-cv}
+
+\begin{document}
+
+% 中文内容（示例：虚构学者张大山）
+\input{cv-content-zh}
+
+\end{document}
