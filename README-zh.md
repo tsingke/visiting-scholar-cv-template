@@ -44,6 +44,16 @@
 | ![EN 第2页](docs/preview/main-en-p2.png) | ![ZH 第2页](docs/preview/main-zh-p2.png) |
 | *Page 2 — projects, teaching, honours, collaboration* | *第 2 页 — 项目、教学、荣誉与合作意向* |
 
+### 🌐 在线介绍网页
+
+项目配套了基于 **GitHub Pages** 的中文介绍网页——移动端友好的落地页，完整呈现特性、效果预览、编译教程与文件结构：
+
+**[tsingke.github.io/visiting-scholar-cv-template](https://tsingke.github.io/visiting-scholar-cv-template/)** 📱✨
+
+| 在线网页（顶部） |
+|:---:|
+| ![GitHub Pages 在线网页](docs/preview/pages-top.png) |
+
 ## 🚀 快速开始
 
 ### 环境要求

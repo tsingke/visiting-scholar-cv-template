@@ -44,6 +44,16 @@ Compiled with XeLaTeX (TeX Live 2026), Raleway typeface, American-blue palette.
 | ![EN page 2](docs/preview/main-en-p2.png) | ![ZH page 2](docs/preview/main-zh-p2.png) |
 | *Page 2 — projects, teaching, honours, collaboration* | *第 2 页 — 项目、教学、荣誉与合作意向* |
 
+### 🌐 Online Landing Page
+
+A Chinese introduction website is hosted on **GitHub Pages** — a mobile-friendly landing page with features, previews, build instructions and file structure:
+
+**[tsingke.github.io/visiting-scholar-cv-template](https://tsingke.github.io/visiting-scholar-cv-template/)** 📱✨
+
+| Landing page (top) |
+|:---:|
+| ![GitHub Pages landing page](docs/preview/pages-top.png) |
+
 ## 🚀 Quick Start
 
 ### Requirements
