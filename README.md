@@ -14,6 +14,7 @@ A professional, two-column **academic CV template** built with XeLaTeX for **vis
 [![Bilingual](https://img.shields.io/badge/bilingual-EN%20%E2%9C%95%20ZH-9cf.svg)](README.md)
 [![CSC](https://img.shields.io/badge/for-CSC%20Visiting%20Scholars-ff69b4.svg)](README.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tsingke/visiting-scholar-cv-template/pulls)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-%E5%9C%A8%E7%BA%BF%E9%A2%84%E8%A7%88-2ea44f.svg)](https://tsingke.github.io/visiting-scholar-cv-template/)
 
 </div>
 
