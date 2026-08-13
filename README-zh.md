@@ -6,6 +6,8 @@
 
 一套基于 XeLaTeX 的专业双栏学术简历模板，专为**访问学者、高校教师与研究生**设计——尤其适合申请**国家留学基金委（CSC）公派访问学者**。
 
+[![Stars](https://img.shields.io/github/stars/tsingke/visiting-scholar-cv-template?style=flat&logo=github)](https://github.com/tsingke/visiting-scholar-cv-template)
+[![Forks](https://img.shields.io/github/forks/tsingke/visiting-scholar-cv-template?style=flat&logo=github)](https://github.com/tsingke/visiting-scholar-cv-template/forks)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Engine](https://img.shields.io/badge/engine-XeLaTeX-brightgreen.svg)](main-zh.tex)
 [![TeX Live](https://img.shields.io/badge/TeX%20Live-2024%2B-orange.svg)](https://tug.org/texlive/)

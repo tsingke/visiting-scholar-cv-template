@@ -6,6 +6,8 @@
 
 A professional, two-column **academic CV template** built with XeLaTeX for **visiting scholars, faculty and graduate researchers** — especially those applying for a **China Scholarship Council (CSC) visiting-scholar appointment**.
 
+[![Stars](https://img.shields.io/github/stars/tsingke/visiting-scholar-cv-template?style=flat&logo=github)](https://github.com/tsingke/visiting-scholar-cv-template)
+[![Forks](https://img.shields.io/github/forks/tsingke/visiting-scholar-cv-template?style=flat&logo=github)](https://github.com/tsingke/visiting-scholar-cv-template/forks)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Engine](https://img.shields.io/badge/engine-XeLaTeX-brightgreen.svg)](main-en.tex)
 [![TeX Live](https://img.shields.io/badge/TeX%20Live-2024%2B-orange.svg)](https://tug.org/texlive/)
