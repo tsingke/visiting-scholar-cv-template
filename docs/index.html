@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 访问学者简历模板 — 中英双语 LaTeX 学术简历</title>
+<meta name="description" content="访问学者简历模板：基于 XeLaTeX 的专业中英双语双栏学术简历，专为 CSC 公派访问学者、高校教师与研究生设计。">
+<meta property="og:title" content="🎓 访问学者简历模板 (LaTeX)">
+<meta property="og:description" content="中英双语学术简历模板，适合 CSC 公派访问学者申请。一键换肤、双栏布局、图文并茂。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tsingke.github.io/visiting-scholar-cv-template/">
+<meta property="og:image" content="https://tsingke.github.io/visiting-scholar-cv-template/preview/main-en-p1.png">
+<style>
+  :root {
+    --blue: #3B5998;
+    --navy: #182C52;
+    --navy-deep: #0F1F3D;
+    --light: #EEF2F7;
+    --slate: #5B6F82;
+    --text: #24303F;
+    --white: #FFFFFF;
+    --gold: #E8B64C;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+  }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 55%, var(--blue) 100%);
+    color: var(--white);
+    padding: 88px 0 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute; top: -60%; left: -20%; width: 140%; height: 160%;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.10) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: 1px; }
+  .hero .sub { margin-top: 14px; font-size: 1.15rem; color: rgba(255,255,255,0.85); }
+  .hero .en { margin-top: 6px; font-size: 0.95rem; color: rgba(255,255,255,0.55); letter-spacing: 0.4px; }
+  .badges { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .badges img { height: 22px; border-radius: 3px; }
+  .hero-actions { margin-top: 34px; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+  .btn {
+    display: inline-block; padding: 13px 30px; border-radius: 8px;
+    font-size: 1rem; font-weight: 600; text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary { background: var(--gold); color: var(--navy-deep); box-shadow: 0 4px 18px rgba(0,0,0,0.25); }
+  .btn-ghost { background: rgba(255,255,255,0.12); color: var(--white); border: 1px solid rgba(255,255,255,0.35); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 64px 0; }
+  section.alt { background: var(--light); }
+  .section-title {
+    text-align: center; font-size: 1.7rem; font-weight: 800; color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .section-sub { text-align: center; color: var(--slate); margin-bottom: 44px; font-size: 0.98rem; }
+  .title-bar {
+    width: 64px; height: 4px; background: var(--blue); border-radius: 2px;
+    margin: 0 auto 44px;
+  }
+
+  /* ---------- Features ---------- */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .feature {
+    background: var(--white); border: 1px solid #E3EAF2; border-radius: 12px;
+    padding: 26px 22px; transition: box-shadow .2s ease, transform .2s ease;
+  }
+  .feature:hover { box-shadow: 0 8px 28px rgba(24,44,82,0.10); transform: translateY(-3px); }
+  .feature .icon { font-size: 1.7rem; }
+  .feature h3 { font-size: 1.05rem; color: var(--navy); margin: 12px 0 8px; }
+  .feature p { font-size: 0.9rem; color: var(--slate); }
+
+  /* ---------- Preview ---------- */
+  .preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .preview-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 24px rgba(24,44,82,0.10); }
+  .preview-card .cap {
+    padding: 12px 16px; font-size: 0.88rem; font-weight: 600; color: var(--navy);
+    background: var(--light); display: flex; justify-content: space-between; align-items: center;
+  }
+  .preview-card a.dl { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 0.82rem; }
+  .preview-card a.dl:hover { text-decoration: underline; }
+  .preview-card img { width: 100%; display: block; }
+
+  /* ---------- Usage ---------- */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .code-box {
+    background: var(--navy-deep); color: #DCE7F5; border-radius: 10px;
+    padding: 20px 22px; font-family: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    font-size: 0.86rem; line-height: 1.8; overflow-x: auto;
+  }
+  .code-box .c { color: #6E8BB5; }   /* comment */
+  .code-box .ok { color: #7BD88F; }
+  .step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+  .step-num {
+    flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+    background: var(--blue); color: #fff; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; font-size: 0.95rem;
+  }
+  .step h4 { color: var(--navy); margin-bottom: 4px; }
+  .step p { font-size: 0.92rem; color: var(--slate); }
+  .step code {
+    background: var(--light); padding: 1px 7px; border-radius: 4px;
+    font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.85em; color: var(--blue);
+  }
+
+  /* ---------- File tree ---------- */
+  .tree {
+    background: var(--navy-deep); border-radius: 10px; padding: 24px 26px;
+    font-family: "SF Mono", Menlo, Consolas, monospace; font-size: 0.86rem; line-height: 2.0;
+    color: #DCE7F5; overflow-x: auto;
+  }
+  .tree .dir { color: #8FB8E8; font-weight: 700; }
+  .tree .cmt { color: #6E8BB5; }
+  .tree .hl { color: var(--gold); }
+
+  /* ---------- CTA ---------- */
+  .cta { text-align: center; }
+  .cta p { color: var(--slate); margin-bottom: 26px; }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy-deep); color: rgba(255,255,255,0.65);
+    text-align: center; padding: 34px 0; font-size: 0.88rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 820px) {
+    .hero h1 { font-size: 2rem; }
+    .preview-grid, .usage-grid { grid-template-columns: 1fr; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="container">
+    <h1>🎓 访问学者简历模板</h1>
+    <p class="sub">中英双语 · 双栏布局 · 一键换肤的专业 LaTeX 学术简历</p>
+    <p class="en">Visiting Scholar CV Template — XeLaTeX · Bilingual (EN / ZH) · MIT License</p>
+    <div class="badges">
+      <img src="https://img.shields.io/github/stars/tsingke/visiting-scholar-cv-template?style=flat&logo=github" alt="Stars">
+      <img src="https://img.shields.io/github/forks/tsingke/visiting-scholar-cv-template?style=flat&logo=github" alt="Forks">
+      <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT">
+      <img src="https://img.shields.io/badge/engine-XeLaTeX-brightgreen" alt="XeLaTeX">
+      <img src="https://img.shields.io/badge/bilingual-中%20%7C%20英-9cf" alt="Bilingual">
+      <img src="https://img.shields.io/badge/for-CSC%20访问学者-ff69b4" alt="CSC">
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://github.com/tsingke/visiting-scholar-cv-template" target="_blank" rel="noopener">⭐ 前往 GitHub</a>
+      <a class="btn btn-ghost" href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-zh.pdf" target="_blank" rel="noopener">📄 下载中文版 PDF</a>
+      <a class="btn btn-ghost" href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-en.pdf" target="_blank" rel="noopener">📄 下载英文版 PDF</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== FEATURES ===================== -->
+<section id="features">
+  <div class="container">
+    <h2 class="section-title">✨ 特性亮点</h2>
+    <div class="title-bar"></div>
+    <div class="features">
+      <div class="feature"><div class="icon">🌏</div><h3>中英双语</h3><p>英文版与中文版共用同一套样式文件，分别编译即可生成两份简历。</p></div>
+      <div class="feature"><div class="icon">📐</div><h3>双栏布局</h3><p>左侧栏承载照片、技能、教育、联系方式；右侧主体承载简介、论文、项目与荣誉。</p></div>
+      <div class="feature"><div class="icon">🎨</div><h3>一键换肤</h3><p>全局配色集中管理，修改 4 个 RGB 值即可整体更换主题色，适配不同院校风格。</p></div>
+      <div class="feature"><div class="icon">🧩</div><h3>模块化架构</h3><p>样式、入口、内容三层分离。修改个人信息只需编辑一个内容文件，零 LaTeX 门槛。</p></div>
+      <div class="feature"><div class="icon">📊</div><h3>技能进度条</h3><p>全宽进度条直观呈现研究方向与技能熟练度，排版精细对齐。</p></div>
+      <div class="feature"><div class="icon">🔗</div><h3>图标链接</h3><p>Font Awesome 图标 + 可点击的邮箱、GitHub、电话链接，方便导师一键联系。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PREVIEW ===================== -->
+<section id="preview" class="alt">
+  <div class="container">
+    <h2 class="section-title">📸 效果预览</h2>
+    <div class="section-sub">使用 XeLaTeX（TeX Live 2026）编译 · Raleway 字体 · 美国蓝配色</div>
+    <div class="preview-grid">
+      <div class="preview-card">
+        <div class="cap"><span>🇨🇳 中文版 main-zh.pdf</span><a class="dl" href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-zh.pdf" target="_blank" rel="noopener">下载 PDF ↗</a></div>
+        <a href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-zh.pdf" target="_blank" rel="noopener">
+          <img src="preview/main-zh-p1.png" alt="中文版简历第1页">
+        </a>
+      </div>
+      <div class="preview-card">
+        <div class="cap"><span>🇬🇧 英文版 main-en.pdf</span><a class="dl" href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-en.pdf" target="_blank" rel="noopener">下载 PDF ↗</a></div>
+        <a href="https://github.com/tsingke/visiting-scholar-cv-template/raw/main/main-en.pdf" target="_blank" rel="noopener">
+          <img src="preview/main-en-p1.png" alt="英文版简历第1页">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== USAGE ===================== -->
+<section id="usage">
+  <div class="container">
+    <h2 class="section-title">🚀 快速开始</h2>
+    <div class="title-bar"></div>
+    <div class="usage-grid">
+      <div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div><h4>克隆仓库</h4><p>将模板克隆到本地（或直接<a href="https://github.com/tsingke/visiting-scholar-cv-template" target="_blank" rel="noopener">下载 ZIP</a>）。</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div><h4>编辑个人信息</h4><p>打开 <code>cv-content-zh.tex</code>（中文）或 <code>cv-content-en.tex</code>（英文），按注释替换示例内容（张大山 / Da-Shan Zhang）。</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div><h4>替换照片</h4><p>将你的证件照放入 <code>resources/photo.jpg</code>。</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div><h4>一键换肤（可选）</h4><p>在 <code>academic-cv.sty</code> 的配色区块修改 4 个 RGB 值，即可切换整体主题色。</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div><h4>编译生成 PDF</h4><p>需要 <a href="https://tug.org/texlive/" target="_blank" rel="noopener">TeX Live 2024+</a>，运行下方命令即可。</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="code-box">
+<span class="c"># 中文版（需运行两次，确保页眉/页脚定位正确）</span><br>
+$ xelatex main-zh.tex<br>
+$ xelatex main-zh.tex<br>
+<span class="ok">✔ main-zh.pdf</span><br><br>
+<span class="c"># 英文版</span><br>
+$ xelatex main-en.tex<br>
+$ xelatex main-en.tex<br>
+<span class="ok">✔ main-en.pdf</span><br><br>
+<span class="c"># 或使用 Makefile 一键编译</span><br>
+$ make &nbsp;&nbsp;&nbsp;<span class="c"># 同时编译中英文</span><br>
+$ make zh&nbsp;&nbsp;<span class="c"># 仅中文</span><br>
+$ make en&nbsp;&nbsp;<span class="c"># 仅英文</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FILE TREE ===================== -->
+<section id="structure" class="alt">
+  <div class="container">
+    <h2 class="section-title">📂 文件结构</h2>
+    <div class="title-bar"></div>
+    <div class="tree">
+<span class="dir">visiting-scholar-cv-template/</span><br>
+├── <span class="hl">academic-cv.sty</span>       <span class="cmt"># 样式层：字体、配色、版式与 CV 命令</span><br>
+├── <span class="hl">main-en.tex</span>           <span class="cmt"># 英文版入口（含编译说明）</span><br>
+├── <span class="hl">main-zh.tex</span>           <span class="cmt"># 中文版入口（含编译说明）</span><br>
+├── <span class="hl">cv-content-en.tex</span>     <span class="cmt"># 英文内容层（示例：张大山）</span><br>
+├── <span class="hl">cv-content-zh.tex</span>     <span class="cmt"># 中文内容层（示例：张大山）</span><br>
+├── <span class="dir">resources/</span><br>
+│&nbsp;&nbsp;&nbsp;└── photo.jpg          <span class="cmt"># 占位照片 → 替换为你自己的照片</span><br>
+├── <span class="dir">docs/</span>                  <span class="cmt"># 本项目网页（GitHub Pages）</span><br>
+│&nbsp;&nbsp;&nbsp;├── index.html         <span class="cmt"># 中文介绍页</span><br>
+│&nbsp;&nbsp;&nbsp;└── preview/           <span class="cmt"># 效果预览图</span><br>
+├── Makefile &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="cmt"># 一键编译（en / zh / all / clean）</span><br>
+├── latexmkrc &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     <span class="cmt"># latexmk 的 XeLaTeX 配置</span><br>
+├── LICENSE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="cmt"># MIT 许可证</span><br>
+└── README.md / README-zh.md
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section id="cta" class="cta">
+  <div class="container">
+    <h2 class="section-title">开始制作你的访学简历</h2>
+    <p>无论是 CSC 公派访问学者申请，还是国际学术合作交流，这份模板都能帮你快速生成专业、美观的简历。</p>
+    <a class="btn btn-primary" href="https://github.com/tsingke/visiting-scholar-cv-template" target="_blank" rel="noopener">⭐ Star 支持项目</a>
+    <a class="btn btn-ghost" href="https://github.com/tsingke/visiting-scholar-cv-template/issues" target="_blank" rel="noopener" style="background:#E3EAF2;color:var(--navy);border:1px solid #C5D5E3;">💡 反馈建议</a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <p>🎓 访问学者简历模板 · 基于 <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">MIT 许可证</a> 开源 · 用心为全球学术社区而作</p>
+    <p style="margin-top:6px;">Made with ❤️ by <a href="https://github.com/tsingke" target="_blank" rel="noopener">tsingke</a> · 愿所有访问学者申请顺利 🚀</p>
+  </div>
+</footer>
+
+</body>
+</html>
